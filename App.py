@@ -53,5 +53,8 @@ acceleration.grid(row='1', column='3')
 quit = Button(root, text='Quit', command=quit)
 quit.grid()
 
+converter = Button(root, text='Convert', command=convert)
+converter.grid()
+
 
 root.mainloop()
