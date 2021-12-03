@@ -7,24 +7,24 @@ from tkinter import messagebox
 from functions import find_change_in_time, find_final_velocity, find_accceleration, find_initial_velocity
 
 root = Tk()
-def convert():
-    formula = looking_for.get()
-    formula.lower()
+# def convert():
+#     formula = looking_for.get()
+#     formula.lower()
 
-    if formula == 'find delta t':
-        vi = float(initial_velocity.get())
-        vf = float(final_velocity.get())
-        acceleration = float(acceleratio.get())
-        change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
-        messagebox.showinfo( "Change In Time", change_in_time)
-    # elif vi == True and a == True and delta_t == True:
-    #     vi = float(input("What is your intital velocity: "))
-    #     acceleration = float(input("What is your acceleration: "))
-    #     change_in_time = float(input("What is your change in time: "))
-    #     final_velocity = round(find_final_velocity(vi, acceleration, change_in_time), 2)
-    #     print(f"The final velocity is {final_velocity}")
-    # else:
-    #     print("Thanks anyway")
+#     if formula == 'find delta t':
+#         vi = float(initial_velocity.get())
+#         vf = float(final_velocity.get())
+#         acceleration = float(acceleratio.get())
+#         change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
+#         messagebox.showinfo( "Change In Time", change_in_time)
+#     # elif vi == True and a == True and delta_t == True:
+#     #     vi = float(input("What is your intital velocity: "))
+#     #     acceleration = float(input("What is your acceleration: "))
+#     #     change_in_time = float(input("What is your change in time: "))
+#     #     final_velocity = round(find_final_velocity(vi, acceleration, change_in_time), 2)
+#     #     print(f"The final velocity is {final_velocity}")
+#     # else:
+#     #     print("Thanks anyway")
 
 
 #Labels
@@ -51,12 +51,32 @@ acceleratio.grid(row='1', column='3')
 looking_for = Entry(root)
 looking_for.grid(row='4', column='0')
 
+def convert():
+    formula = looking_for.get()
+    formula.lower()
+
+    if formula == 'find delta t':
+        vi = float(initial_velocity.get())
+        vf = float(final_velocity.get())
+        acceleration = float(acceleratio.get())
+        change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
+        messagebox.showinfo( "Change In Time", change_in_time)
+    # elif vi == True and a == True and delta_t == True:
+    #     vi = float(input("What is your intital velocity: "))
+    #     acceleration = float(input("What is your acceleration: "))
+    #     change_in_time = float(input("What is your change in time: "))
+    #     final_velocity = round(find_final_velocity(vi, acceleration, change_in_time), 2)
+    #     print(f"The final velocity is {final_velocity}")
+    # else:
+    #     print("Thanks anyway")
+
 #buttons
 quit = Button(root, text='Quit', command=quit)
 quit.grid()
 
 converter = Button(root, text='Convert', command=convert)
 converter.grid()
+
 
 
 root.mainloop()
