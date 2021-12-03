@@ -7,15 +7,13 @@ from functions import find_change_in_time, find_final_velocity, find_acccelerati
 
 root = Tk()
 def convert():
-    vf = bool(final_velocity.get())
-    vi = bool(initial_velocity.get())
-    delta_t = bool(change_in_time.get())
-    a = bool(acceleration.get())
-
-    if vf == True and vi == True and a == True:
-        vi = float(input("What is your intital velocity: "))
-        vf = float(input("What is your final velocity: "))
-        acceleration = float(input("What is your acceleration: "))
+    formula = looking_for.get()
+    formula.lower()
+    
+    if formula == 'find delta t':
+        vi = float(initial_velocity.get())
+        vf = float(final_velocity.get())
+        acceleration = float(acceleration.get())
         change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
         print(f"Your change in time is {change_in_time}")
     elif vi == True and a == True and delta_t == True:
@@ -37,6 +35,8 @@ change_in_time_label = Label (root, text='Change in Time', padx='1i')
 change_in_time_label.grid(row='0', column='2')
 acceleration_label = Label (root, text="Acceleration")
 acceleration_label.grid(row='0', column='3')
+looking_for_label = Label (root, text='Looking For')
+looking_for_label.grid(row= '3', column='0')
 
 #Entry Boxes
 final_velocity = Entry(root)
@@ -47,7 +47,8 @@ change_in_time = Entry(root)
 change_in_time.grid(row='1', column='2')
 acceleration = Entry(root)
 acceleration.grid(row='1', column='3')
-
+looking_for = Entry(root)
+looking_for.grid(row='4', column='0')
 
 #buttons
 quit = Button(root, text='Quit', command=quit)
