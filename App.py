@@ -56,5 +56,10 @@ quit.grid()
 converter = Button(root, text='Convert', command=convert)
 converter.grid()
 
+#List
+final_velocity_list = Listbox(root)
+final_velocity_list.insert(1, "True")
+final_velocity_list.insert(2, "False")
+final_velocity_list.grid(row='3', column='0')
 
 root.mainloop()
