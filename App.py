@@ -14,7 +14,7 @@ def convert():
     if formula == 'find delta t':
         vi = float(initial_velocity.get())
         vf = float(final_velocity.get())
-        acceleration = float(acceleration.get())
+        acceleration = float(acceleratio.get())
         change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
         messagebox.showinfo( "Change In Time", change_in_time)
     # elif vi == True and a == True and delta_t == True:
@@ -46,8 +46,8 @@ initial_velocity = Entry(root)
 initial_velocity.grid(row='1', column='1')
 change_in_time = Entry(root)
 change_in_time.grid(row='1', column='2')
-acceleration = Entry(root)
-acceleration.grid(row='1', column='3')
+acceleratio = Entry(root)
+acceleratio.grid(row='1', column='3')
 looking_for = Entry(root)
 looking_for.grid(row='4', column='0')
 
