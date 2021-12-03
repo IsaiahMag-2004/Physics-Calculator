@@ -54,7 +54,7 @@ quit = Button(root, text='Quit', command=quit)
 quit.grid()
 
 converter = Button(root, text='Convert', command=convert)
-converter.grid()
+converter.grid(row='4', column='0')
 
 #List
 final_velocity_list = Listbox(root)
