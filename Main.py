@@ -20,9 +20,14 @@ if vf == True and vi == True and acceleration == True:
 	vi = float(input("What is your intital velocity: "))
 	vf = float(input("What is your final velocity: "))
 	acceleration = float(input("What is your acceleration: "))
-	change_in_time = find_change_in_time(vf, vi, acceleration)
+	change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
 	print(f"Your change in time is {change_in_time}")
-	
+elif vi == True and acceleration == True and delta_t == True:
+	vi = float(input("What is your intital velocity: "))
+	acceleration = float(input("What is your acceleration: "))
+	change_in_time = float(input("What is your change in time: "))
+	final_velocity = round(find_final_velocity(vi, acceleration, change_in_time), 2)
+	print(f"The final velocity is {final_velocity}")
 else:
 	print("Thanks anyway")
 
