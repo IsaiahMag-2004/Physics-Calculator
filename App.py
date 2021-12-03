@@ -3,6 +3,8 @@ from tkinter import *
 from tkinter import ttk
 from typing import final
 
+from functions import find_change_in_time, find_final_velocity, find_accceleration, find_initial_velocity
+
 root = Tk()
 def convert():
     vf = bool(final_velocity.get())
@@ -10,13 +12,13 @@ def convert():
     delta_t = bool(change_in_time.get())
     a = bool(acceleration.get())
 
-    if vf == True and vi == True and acceleration == True:
+    if vf == True and vi == True and a == True:
         vi = float(input("What is your intital velocity: "))
         vf = float(input("What is your final velocity: "))
         acceleration = float(input("What is your acceleration: "))
         change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
         print(f"Your change in time is {change_in_time}")
-    elif vi == True and acceleration == True and delta_t == True:
+    elif vi == True and a == True and delta_t == True:
         vi = float(input("What is your intital velocity: "))
         acceleration = float(input("What is your acceleration: "))
         change_in_time = float(input("What is your change in time: "))
@@ -24,6 +26,7 @@ def convert():
         print(f"The final velocity is {final_velocity}")
     else:
         print("Thanks anyway")
+
 
 #Labels
 final_velocity_label = Label (root, text='Final Velocity')
