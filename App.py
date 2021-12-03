@@ -8,7 +8,6 @@ root = Tk()
 
 #Labels
 final_velocity_label = Label (root, text='Final Velocity')
-final_velocity_label.grid(row='0', column='0')
 initial_velocity_label = Label (root, text='Initial Velocity', padx='1i')
 change_in_time_label = Label (root, text='Change in Time', padx='1i')
 acceleration_label = Label (root, text="Acceleration")
@@ -26,7 +25,7 @@ def convert():
     formula = looking_for.get()
     formula.lower()
 
-    if formula == 'find delta t':
+    if formula == 'delta t':
         vi = float(initial_velocity.get())
         vf = float(final_velocity.get())
         acceleration = float(acceleratio.get())
