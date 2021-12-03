@@ -57,22 +57,22 @@ converter = Button(root, text='Convert', command=convert)
 converter.grid(row='4', column='0')
 
 #List
-final_velocity_list = Listbox(root)
+final_velocity_list = Listbox(root, selectmode='SINGLE')
 final_velocity_list.insert(1, "True")
 final_velocity_list.insert(2, "False")
 final_velocity_list.grid(row='3', column='0')
 
-initial_velocity_list = Listbox(root)
+initial_velocity_list = Listbox(root, selectmode='SINGLE')
 initial_velocity_list.insert(1, "True")
 initial_velocity_list.insert(2, "False")
 initial_velocity_list.grid(row='3', column='1')
 
-change_in_time_list = Listbox(root)
+change_in_time_list = Listbox(root, selectmode='SINGLE')
 change_in_time_list.insert(1, "True")
 change_in_time_list.insert(2, "False")
 change_in_time_list.grid(row='3', column='2')
 
-acceleration_list = Listbox(root)
+acceleration_list = Listbox(root, selectmode='SINGLE')
 acceleration_list.insert(1, "True")
 acceleration_list.insert(2, "False")
 acceleration_list.grid(row='3', column='3')
