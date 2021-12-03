@@ -7,10 +7,10 @@ from functions import find_change_in_time, find_final_velocity, find_acccelerati
 
 root = Tk()
 def convert():
-    vf = bool(final_velocity_list.get(LAST))
-    vi = bool(initial_velocity_list.get(LAST))
-    delta_t = bool(change_in_time_list.get(LAST))
-    a = bool(acceleration_list.get(LAST))
+    vf = bool(final_velocity_list.get(0, -1))
+    vi = bool(initial_velocity_list.get(0, -1))
+    delta_t = bool(change_in_time_list.get(0, -1))
+    a = bool(acceleration_list.get(0, -1))
 
     if vf == True and vi == True and a == True:
         vi = float(initial_velocity.get())
