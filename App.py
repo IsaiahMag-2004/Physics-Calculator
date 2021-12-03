@@ -2,20 +2,20 @@
 from tkinter import *
 from tkinter import ttk
 from typing import final
-
+from tkinter import messagebox
 from functions import find_change_in_time, find_final_velocity, find_accceleration, find_initial_velocity
 
 root = Tk()
 def convert():
-    vf = bool(final_velocity.get())
-    vi = bool(initial_velocity.get())
-    delta_t = bool(change_in_time.get())
-    a = bool(acceleration.get())
+    vf = bool(final_velocity_list.get(LAST))
+    vi = bool(initial_velocity_list.get(LAST))
+    delta_t = bool(change_in_time_list.get(LAST))
+    a = bool(acceleration_list.get(LAST))
 
     if vf == True and vi == True and a == True:
-        vi = float(input("What is your intital velocity: "))
-        vf = float(input("What is your final velocity: "))
-        acceleration = float(input("What is your acceleration: "))
+        vi = float(initial_velocity.get())
+        vf = float(final_velocity.get())
+        acceleration = float(acceleration.get())
         change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
         print(f"Your change in time is {change_in_time}")
     elif vi == True and a == True and delta_t == True:
@@ -23,7 +23,7 @@ def convert():
         acceleration = float(input("What is your acceleration: "))
         change_in_time = float(input("What is your change in time: "))
         final_velocity = round(find_final_velocity(vi, acceleration, change_in_time), 2)
-        print(f"The final velocity is {final_velocity}")
+        messagebox.showinfo( "Final Velocity", final_velocity)
     else:
         print("Thanks anyway")
 
