@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter import ttk
 from typing import final
+from tkinter import messagebox
 
 from functions import find_change_in_time, find_final_velocity, find_accceleration, find_initial_velocity
 
@@ -15,7 +16,7 @@ def convert():
         vf = float(final_velocity.get())
         acceleration = float(acceleration.get())
         change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
-        print(f"Your change in time is {change_in_time}")
+        messagebox.showinfo( "Change In Time", change_in_time)
     elif vi == True and a == True and delta_t == True:
         vi = float(input("What is your intital velocity: "))
         acceleration = float(input("What is your acceleration: "))
