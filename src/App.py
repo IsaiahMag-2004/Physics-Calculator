@@ -36,7 +36,24 @@ def convert():
         acceleration = float(acceleratio.get())
         change_in_time = round(find_change_in_time(vf, vi, acceleration), 2)
         messagebox.showinfo( "Change In Time", change_in_time)
-
+    elif formula == 'final velocity':
+        vi = float(initial_velocity.get())
+        acceleration = float(acceleratio.get())
+        change_in_time = float(change_in_time.get())
+        messagebox.showinfo("Initial Velocity", change_in_time)
+        find_accceleration(vi, acceleration, change_in_time)
+    elif formula == 'acceleration':
+        vi = float(initial_velocity.get())
+        vf = float(final_velocity.get())
+        change_in_time = float(change_in_time.get())
+        acceleration = find_accceleration(vf, vi, change_in_time)
+        messagebox.showinfo("Acceleration", acceleration)
+    else:
+        vf = float(final_velocity.get())
+        change_in_time = float(change_in_time.get())
+        acceleration = float(acceleratio.get())
+        initial_velocity = find_initial_velocity(vf, acceleration, change_in_time)
+        messagebox.showinfo("Initial Velocity", initial_velocity)
 #buttons
 quit = Button(root, text='Quit', command=quit)
 converter = Button(root, text='Convert', command=convert)
